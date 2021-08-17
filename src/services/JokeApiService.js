@@ -15,9 +15,9 @@ export default class JokeApiService {
   }
 
   /**
-   * Fetching jokes.
+   * Fetching jokes. Accepts callback to handle json.
    *
-   * @param {Function} callback
+   * @param {Function} callback - callback. Receives json.
    */
   async fetchJokes(callback) {
     fetch(this.baseUrl)

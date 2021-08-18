@@ -1,6 +1,5 @@
 <template>
   <div :class="'joke' + (liked ? ' joke-liked' : '')">
-    {{ joke.id }}
     <p class="joke__text" v-if="joke.type === 'single'">
       {{ joke.joke }}
     </p>

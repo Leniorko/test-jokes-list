@@ -1,7 +1,10 @@
 <template>
   <div class="search">
     <searchbar v-model:searchQuery="searchQuery" />
-    <joke-list v-if="fetchedJokes.jokes" :jokes="fetchedJokes.jokes" />
+    <joke-list
+      v-if="fetchedJokes.jokes"
+      :jokes="filteredJokes ? filteredJokes : fetchedJokes.jokes"
+    />
     <div class="loading" v-else><p>Loading...</p></div>
   </div>
 </template>
@@ -22,6 +25,7 @@ export default {
     return {
       fetchedJokes: new JokesRequestResult(),
       searchQuery: "",
+      filteredJokes: undefined,
     };
   },
   beforeCreate() {
@@ -29,6 +33,29 @@ export default {
     apiService.fetchJokes((json) => {
       this.fetchedJokes = json;
     });
+  },
+  watch: {
+    // Filtering jokes depending on searchQuery
+    searchQuery: function () {
+      if (this.fetchedJokes.jokes.length === 10) {
+        this.filteredJokes = this.fetchedJokes.jokes.filter((joke) => {
+          if (joke.joke) {
+            if (joke.joke.search(this.searchQuery) !== -1) {
+              return true;
+            }
+          } else if (joke.setup && joke.delivery) {
+            if (
+              joke.setup.search(this.searchQuery) !== -1 ||
+              joke.delivery.search(this.searchQuery) !== -1
+            ) {
+              return true;
+            }
+          }
+          return false;
+        });
+        return false;
+      }
+    },
   },
 };
 </script>

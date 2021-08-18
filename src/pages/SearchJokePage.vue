@@ -58,4 +58,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.search {
+  width: 70ch;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.loading {
+  width: fit-content;
+  margin: auto;
+  padding-top: 32px;
+  font-size: 32px;
+}
+</style>

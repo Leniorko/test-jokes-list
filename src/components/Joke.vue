@@ -3,13 +3,12 @@
     <p class="joke__text" v-if="joke.type === 'single'">
       {{ joke.joke }}
     </p>
-    <div class="joke__text" v-else>
-      <details>
-        <summary>{{ joke.setup }}</summary>
-        {{ joke.delivery }}
-      </details>
-    </div>
+    <details class="joke__twopart-container" v-else>
+      <summary>{{ joke.setup }}</summary>
+      <div class="joke__delivery">{{ joke.delivery }}</div>
+    </details>
     <img
+      class="joke__like-icon"
       :src="
         liked
           ? require('../assets/icons/liked.svg')
@@ -62,4 +61,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.joke {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+}
+
+.joke-liked {
+  background-color: rgba(0, 217, 255, 0.24);
+}
+
+.joke__twopart-container > summary {
+  cursor: pointer;
+}
+
+.joke__like-icon {
+  cursor: pointer;
+}
+</style>

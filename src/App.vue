@@ -13,4 +13,17 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+/* Global styles */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  min-height: 100vh;
+}
+</style>

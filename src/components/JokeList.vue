@@ -1,6 +1,6 @@
 <template>
-  <ul v-for="joke in jokes" v-bind:key="joke.id">
-    <li><joke :joke="joke" /></li>
+  <ul>
+    <li><joke v-for="joke in jokes" v-bind:key="joke.id" :joke="joke" /></li>
   </ul>
 </template>
 
@@ -18,7 +18,6 @@ export default {
       require: true,
     },
   },
-  created() {},
 };
 </script>
 

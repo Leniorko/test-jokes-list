@@ -1,8 +1,6 @@
 <template>
-  <ul>
-    <li><Joke /></li>
-    <li><Joke /></li>
-    <li><Joke /></li>
+  <ul v-for="joke in jokes" v-bind:key="joke.id">
+    <li><joke :joke="joke" /></li>
   </ul>
 </template>
 
@@ -14,6 +12,13 @@ export default {
   components: {
     Joke,
   },
+  props: {
+    jokes: {
+      type: Array,
+      require: true,
+    },
+  },
+  created() {},
 };
 </script>
 

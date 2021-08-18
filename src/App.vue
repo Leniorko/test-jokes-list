@@ -1,5 +1,5 @@
 <template>
-  <SearchJokePage msg="Welcome to Your Vue.js App" />
+  <SearchJokePage />
 </template>
 
 <script>

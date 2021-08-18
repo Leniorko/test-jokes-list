@@ -11,12 +11,12 @@ export class JokesRequestResult {
    */
   amount;
   /**
-   * @type {Array<Joke>}
+   * @type {Array<JokeModel>}
    */
   jokes;
 }
 
-export class Joke {
+export class JokeModel {
   /**
    * @type {string}
    */

@@ -60,11 +60,12 @@ export default {
 
 <style scoped>
 .search {
-  width: 70ch;
+  max-width: 70ch;
   margin: 32px auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 16px 6px;
 }
 
 .loading {

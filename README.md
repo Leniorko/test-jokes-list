@@ -2,7 +2,9 @@
 
 ---
 
-## Объяснение деталей реализации
+## About
+
+Some old test project. I don't remember details, but I suppose I should have fetched jokes list and display them. Below is the reason of my decisions in Russian. I don't want to translate it, but I will leave it here.
 
 Папка `pages` существует потому что я привык так структурировать проект. Это сделано с мыслью о раутинге. Обычно `App.vue`, в моих проектах, содержит раутинг, и ссылается на страницы.
 
